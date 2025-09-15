@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
-
+# This script listens on TCP port 98 bound to localhost (127.0.0.1).
+# Any data sent to this port (e.g., via telnet localhost 98) will be printed
+# in the terminal running this script.
+# Useful for testing connectivity, debugging socket communication,
+# or simulating a simple TCP server.
 
 nc -l -p 98 -s 127.0.0.1

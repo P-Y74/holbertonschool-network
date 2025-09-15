@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
-# This script modifies /etc/hosts so that:
-# - localhost resolves to 127.0.0.2
-# - facebook.com resolves to 8.8.8.8
-# WARNING: Changing localhost from 127.0.0.1 may break system services,
-# so use this script only for testing purposes and revert afterward.
+# Configure /etc/hosts for the exercise
 
-tmp="$(mktemp)"
-{
-    echo "127.0.0.2 localhost"
-    echo "8.8.8.8 facebook.com"
-    cat /etc/hosts
-} > "$tmp"
-mv "$tmp" /etc/hosts
+sed -i '1i 8.8.8.8 facebook.com' /etc/hosts
+sed -i '1i 127.0.0.2 localhost' /etc/hosts

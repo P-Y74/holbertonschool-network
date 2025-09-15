@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-# Configure /etc/hosts for the exercise
+# Prepend two lines to /etc/hosts in-place without renaming the file.
 
-sed -i '1i 8.8.8.8 facebook.com' /etc/hosts
-sed -i '1i 127.0.0.2 localhost' /etc/hosts
+{
+  printf '127.0.0.2 localhost\n'
+  printf '8.8.8.8 facebook.com\n'
+  cat /etc/hosts
+} | tee /etc/hosts >/dev/null

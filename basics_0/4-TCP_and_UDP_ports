@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
+# Show TCP and UDP sockets that are in LISTEN state,
+# with the PID and program name attached
 netstat -tulnp
+
+# Show UNIX domain sockets that are in LISTEN state,
+# with the PID and program name attached
 netstat -xnlp
